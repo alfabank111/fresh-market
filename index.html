@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fresh Market — Овощи, фрукты и ягоды</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Manrope',sans-serif;
+background:#f7f7f4;
+color:#111;
+line-height:1.5;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 0;
+position:sticky;
+top:0;
+background:#f7f7f4;
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+color:#2f8f2f;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#111;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#2f8f2f;
+}
+
+.phone{
+font-weight:700;
+color:#2f8f2f;
+}
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+padding:80px 0;
+}
+
+.hero h1{
+font-size:68px;
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.hero span{
+color:#2f8f2f;
+}
+
+.hero p{
+font-size:18px;
+color:#666;
+margin-bottom:35px;
+max-width:500px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 38px;
+background:#2f8f2f;
+color:white;
+text-decoration:none;
+border-radius:14px;
+transition:0.3s;
+font-weight:600;
+}
+
+.btn:hover{
+opacity:0.85;
+}
+
+.hero img{
+width:100%;
+height:600px;
+object-fit:cover;
+border-radius:30px;
+}
+
+.advantages{
+padding:60px 0;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.adv{
+background:white;
+padding:35px;
+border-radius:24px;
+text-align:center;
+transition:0.3s;
+}
+
+.adv:hover{
+transform:translateY(-5px);
+}
+
+.adv h3{
+margin-bottom:12px;
+}
+
+.adv p{
+color:#666;
+}
+
+.catalog{
+padding:80px 0;
+}
+
+.section-title{
+font-size:48px;
+margin-bottom:20px;
+text-align:center;
+}
+
+.section-sub{
+color:#666;
+margin-bottom:50px;
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:24px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h3{
+margin-bottom:10px;
+font-size:22px;
+}
+
+.price{
+color:#2f8f2f;
+font-weight:700;
+}
+
+.about{
+padding:100px 0;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:30px;
+height:500px;
+object-fit:cover;
+}
+
+.about h2{
+font-size:54px;
+margin-bottom:25px;
+}
+
+.about p{
+color:#666;
+font-size:18px;
+margin-bottom:20px;
+}
+
+.features{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:20px;
+}
+
+.features div{
+background:white;
+padding:18px;
+border-radius:14px;
+}
+
+.form-section{
+padding:100px 0;
+}
+
+.form-box{
+background:white;
+padding:50px;
+border-radius:30px;
+max-width:700px;
+margin:auto;
+}
+
+.form-box h2{
+font-size:42px;
+margin-bottom:20px;
+text-align:center;
+}
+
+.form-box p{
+text-align:center;
+color:#666;
+margin-bottom:40px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+input,
+textarea{
+padding:18px;
+border:1px solid #ddd;
+border-radius:14px;
+font-size:16px;
+font-family:'Manrope',sans-serif;
+}
+
+button{
+padding:18px;
+border:none;
+background:#2f8f2f;
+color:white;
+border-radius:14px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+font-weight:600;
+}
+
+button:hover{
+opacity:0.85;
+}
+
+.contacts{
+padding:80px 0;
+}
+
+.contact-box{
+background:white;
+padding:50px;
+border-radius:30px;
+}
+
+.contact-box h2{
+font-size:42px;
+margin-bottom:25px;
+}
+
+.contact-box p{
+margin-bottom:15px;
+font-size:17px;
+color:#555;
+}
+
+.map{
+margin-top:30px;
+border-radius:24px;
+overflow:hidden;
+}
+
+.map iframe{
+width:100%;
+height:350px;
+border:none;
+}
+
+footer{
+padding:40px 0;
+text-align:center;
+border-top:1px solid #ddd;
+margin-top:60px;
+color:#777;
+}
+
+@media(max-width:900px){
+
+.hero,
+.about{
+grid-template-columns:1fr;
+}
+
+.cards,
+.advantages{
+grid-template-columns:1fr 1fr;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+}
+
+@media(max-width:600px){
+
+nav{
+display:none;
+}
+
+.cards,
+.advantages{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.form-box{
+padding:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<div class="logo">FRESH MARKET</div>
+
+<nav>
+<a href="#home">Главная</a>
+<a href="#catalog">Каталог</a>
+<a href="#about">О нас</a>
+<a href="#form">Заказ</a>
+<a href="#contacts">Контакты</a>
+</nav>
+
+<div class="phone">
++7 (961) 311-22-33
+</div>
+
+</header>
+
+<section class="hero" id="home">
+
+<div>
+
+<h1>
+Свежие овощи, фрукты и ягоды
+<span>в Ростове-на-Дону</span>
+</h1>
+
+<p>
+Отборные продукты каждый день.
+Свежие овощи, ягоды и фрукты
+для вашего дома и бизнеса.
+</p>
+
+<a href="#catalog" class="btn">
+Смотреть каталог
+</a>
+
+</div>
+
+<div>
+
+<img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<section class="advantages">
+
+<div class="adv">
+<h3>Свежие продукты</h3>
+<p>Ежедневные поставки овощей и фруктов.</p>
+</div>
+
+<div class="adv">
+<h3>Быстрая доставка</h3>
+<p>Оперативная доставка по Ростову.</p>
+</div>
+
+<div class="adv">
+<h3>Лучшее качество</h3>
+<p>Отборные ягоды и натуральные продукты.</p>
+</div>
+
+<div class="adv">
+<h3>Доступные цены</h3>
+<p>Честная стоимость без переплат.</p>
+</div>
+
+</section>
+
+<section class="catalog" id="catalog">
+
+<h2 class="section-title">Каталог продукции</h2>
+
+<p class="section-sub">
+Свежие продукты для всей семьи
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Фрукты</h3>
+<p class="price">от 120 ₽</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Овощи</h3>
+<p class="price">от 80 ₽</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Ягоды</h3>
+<p class="price">от 200 ₽</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Зелень</h3>
+<p class="price">от 60 ₽</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<div>
+
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+<div>
+
+<h2>Почему выбирают нас</h2>
+
+<p>
+Мы работаем только с проверенными поставщиками,
+чтобы каждый клиент получал качественные
+и свежие продукты ежедневно.
+</p>
+
+<div class="features">
+
+<div>✔ Только свежая продукция</div>
+
+<div>✔ Большой ассортимент товаров</div>
+
+<div>✔ Удобное расположение в центре Ростова</div>
+
+<div>✔ Вежливое обслуживание</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="form-section" id="form">
+
+<div class="form-box">
+
+<h2>Оформить заказ</h2>
+
+<p>
+Оставьте заявку и мы свяжемся с вами
+</p>
+
+<form>
+
+<input type="text" placeholder="Ваше имя" required>
+
+<input type="tel" placeholder="Телефон" required>
+
+<input type="email" placeholder="Электронная почта">
+
+<textarea rows="5" placeholder="Комментарий к заказу"></textarea>
+
+<button type="submit">
+Отправить заявку
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<section class="contacts" id="contacts">
+
+<div class="contact-box">
+
+<h2>Контакты и информация</h2>
+
+<p>
+<strong>ИП:</strong>
+Гасанян Аркадий Генрихович
+</p>
+
+<p>
+<strong>ИНН:</strong>
+616614791816
+</p>
+
+<p>
+<strong>Адрес:</strong>
+г. Ростов-на-Дону, Соборный 80
+</p>
+
+<p>
+<strong>График:</strong><br>
+Пн-Пт: 9:00–18:00<br>
+Сб-Вс: 10:00–18:00
+</p>
+
+<p>
+<strong>Телефон:</strong>
++7 (961) 311-22-33
+</p>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=Ростов-на-Дону%20Соборный%2080&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Fresh Market — Овощи, фрукты и ягоды
+
+</footer>
+
+</div>
+
+</body>
+</html>
